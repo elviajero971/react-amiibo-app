@@ -1,0 +1,6 @@
+.display-content{
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}

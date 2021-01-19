@@ -15,9 +15,8 @@ const NavItem = (props) => {
             {props.text}
             <div 
                 className="dropdown-box" 
-                config={MainContainer.config}
             >
-                <DropDownItem/>
+                <DropDownItem config={MainContainer.config}/>
             </div>
         </li>
         

@@ -20,6 +20,7 @@ const NavBar = (props) => {
                             data={jsonData}
                         />
                     );
+                    // console.log(tempArray[3].props.data.amiibo[0].name);
                     
                 } catch (e) {
                     tempArray.push(

@@ -15,7 +15,14 @@ const NavBar = (props) => {
                     const data = await fetch(props.config[i].url);
                     const jsonData = await data.json();
                     tempArray.push(
-                        <NavItem 
+                        <NavItem
+                            clickCallback={
+                                (category, item) => 
+                                props.clickCallback(
+                                    category, 
+                                    item, 
+                                    props.config[i].viewUrl + item)}
+                            hoverGesture={i <= 1} 
                             text={props.config[i].name}
                             data={jsonData}
                         />
@@ -32,13 +39,11 @@ const NavBar = (props) => {
             setMenuItemList(tempArray);
         }
         asyncFunction();
-    }, [])
+    }, [props.config])
 
  return(
     <div className="navbar">
-        <ul className="navbar-ul">
             {menuItemList}
-        </ul>
     </div>
  )
 }

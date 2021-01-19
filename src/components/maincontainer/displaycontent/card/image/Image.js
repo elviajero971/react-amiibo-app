@@ -3,7 +3,7 @@ import img from '../../../../../img/roger-federer.jpg';
 
 const Image = () => {
  return(
-    <img className="img-card" src={img} alt="Roger Federer"/>   
+    <img className="card-img" src={img} alt="Roger Federer"/>   
  )
 }
 

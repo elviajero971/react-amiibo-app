@@ -1,9 +1,21 @@
-.card{
-    border: solid black 2px;
+.card-box{
+    display: flex;
+    flex-wrap: wrap;
     padding: 10px;
-    width: 150px;
+}
+
+.card-item{
+    margin: 10px;
+    border: solid black 2px;
+    padding: 5px;
+    width: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.card-img{
+    width: 160px;
+    height: 250px;
 }

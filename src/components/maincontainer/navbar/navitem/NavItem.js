@@ -1,24 +1,41 @@
+import {useState} from 'react';
 import './NavItem.css';
-import DropDownItem from './dropdownitem/DropDownItem';
-import MainContainer from '../../MainContainer';
 const NavItem = (props) => {
-    // const tempArrayItem = [];
-    
-    // for (let i=0; i<props.data.length; i+= 1) {
-    //     tempArrayItem.push(props.data.amiibo[i]);
-    // }
-    // console.log(tempArrayItem[3].props.data.amiibo[0].name);
+    const [navBarClicked, setNavBarClicked] = useState(false);
+    const childArray = props.data.amiibo.map(
+        (element) => <div className="navbar-item-element" onClick={()=>{props.clickCallback(props.text, element.name)}}>{element.name}</div>
+    );
+
+    let navItemClassName = "navbar-item";
+    if(navBarClicked) navItemClassName += " clicked";
+
+    const clickGesture = () => {
+        if(!props.hoverGesture) {
+            setNavBarClicked(!navBarClicked);
+        }
+    }
+
+    const hoverGesture = (value) => {
+        if (props.hoverGesture) {
+            setNavBarClicked(value);
+        }
+    }
     return (
-        <li 
-            className= "nav-item nav-item-selected"
-        >
-            {props.text}
-            <div 
-                className="dropdown-box" 
-            >
-                <DropDownItem config={MainContainer.config}/>
+        <div
+            onMouseEnter={() => hoverGesture(true)} 
+            onMouseLeave={() => hoverGesture(false)}
+            onClick={clickGesture}
+            className= {navItemClassName}>
+            <div className="navbar-item-text">
+                {props.text}
             </div>
-        </li>
+            
+            <div className="navbar-item-list">
+                <div className="navbar-item-scroller">
+                    {childArray}
+                </div>
+            </div>
+        </div>
         
     );
     

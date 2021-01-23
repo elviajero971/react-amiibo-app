@@ -33,9 +33,7 @@ const DisplayContent = (props) => {
                 {props.category} / {props.type}
             </div>
             {cardListItem}
-            
         </div>
-        
     )
 }
 

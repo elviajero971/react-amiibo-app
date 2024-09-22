@@ -2,32 +2,32 @@ import './NavBar.css';
 import {useState, useEffect} from 'react';
 import NavItem from './navitem/NavItem';
 
-const NavBar = (props) => {
+const NavBar = ({ config, clickCallback }) => {
 
     const [menuItemList, setMenuItemList] = useState([]);
 
     useEffect(() => {
         const asyncFunction = async() => {
-            const tempArray=[];
+            const tempArray = [];
 
-            for (let i=0; i<props.config.length; i+= 1) {
+            for (let i = 0; i < config.length; i += 1) {
                 try {
-                    const data = await fetch(props.config[i].url);
+                    const data = await fetch(config[i].url);
                     const jsonData = await data.json();
                     tempArray.push(
                         <NavItem
                             clickCallback={
-                                (category, item) => 
-                                props.clickCallback(
-                                    category, 
-                                    item, 
-                                    props.config[i].viewUrl + item)}
-                            hoverGesture={i <= 1} 
-                            text={props.config[i].name}
+                                (category, item) =>
+                                    clickCallback(
+                                        category,
+                                        item,
+                                        config[i].viewUrl + item)}
+                            hoverGesture={i <= 1}
+                            text={config[i].name}
                             data={jsonData}
                         />
                     );
-                    
+
                 } catch (e) {
                     tempArray.push(
                         <NavItem
@@ -39,13 +39,13 @@ const NavBar = (props) => {
             setMenuItemList(tempArray);
         }
         asyncFunction();
-    }, [props.config])
+    }, [config, clickCallback]); // Now both config and clickCallback are dependencies
 
- return(
-    <div className="navbar">
+    return (
+        <div className="navbar">
             {menuItemList}
-    </div>
- )
+        </div>
+    );
 }
 
 export default NavBar;

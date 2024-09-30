@@ -1,70 +1,117 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Amiibo App
 
-## Available Scripts
+## 🚀 Introduction
 
-In the project directory, you can run:
+This repository contains a **React** application built with **JavaScript** that consumes the Amiibo API. The purpose of this app is to fetch and display data related to Amiibo figures, showcasing different collections, series, and characters. It is designed to be modular, scalable, and responsive across various devices.
 
-### `npm start`
+## 🎯 Features
+- **Fetches data** from the public Amiibo API.
+- Displays a list of Amiibos with filtering options by series and characters.
+- Provides detailed information for each Amiibo figure.
+- Responsive design for a seamless experience on both mobile and desktop devices.
+- Modular component architecture with reusable styles and components.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🗂️ Project Structure
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Here's an overview of the folder structure of this project:
 
-### `npm test`
+```bash
+.
+├── .github                 # GitHub Actions workflows
+│   └── workflows           # CI/CD workflows
+│       └── main.yml        # Main workflow file
+├── public                  # Static assets (HTML, images, etc.)
+│   └── index.html          # Entry point for the application
+├── src                     # Main application source code
+│   ├── components          # Reusable React components
+│   │   └── maincontainer   # Main container components
+│   │       ├── displaycontent  # Components to display Amiibo content
+│   │       │   └── card        # Card components for Amiibo figures
+│   │       └── navbar          # Navbar components
+│   │           └── navitem     # Navigation items for filtering
+│   └── index.js            # Application entry point
+├── App.js                  # Main application component
+├── index.css               # Global styles for the application
+├── index.js                # Application entry point
+├── package.json            # Project dependencies and scripts
+├── README.md               # This file
+└── .gitignore              # Ignored files in Git
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Key Folders:
+- **`components/`**: Contains reusable UI components, organized by purpose (e.g., `navbar`, `maincontainer`, `displaycontent`).
+- **`css/`**: Styles specific to components or global styles used across the app.
 
-### `npm run build`
+## 🛠️ Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Ensure you have the following installed on your machine:
+- **Node.js** (version 14.x or higher)
+- **npm** or **yarn**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
 
-### `npm run eject`
+Clone this repository and install the dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+# Clone the repository
+git clone https://github.com/elviajero971/react-amiibo-app.git
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Navigate to the project directory
+cd react-amiibo-app
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Install dependencies using npm or yarn
+npm install
+# OR
+yarn install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Running the Application
 
-## Learn More
+After the installation is complete, start the development server:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm start
+# OR
+yarn start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This will start the application and you can view it in your browser at `http://localhost:3000`.
 
-### Code Splitting
+### Building for Production
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+To create a production build of the application:
 
-### Analyzing the Bundle Size
+```bash
+npm run build
+# OR
+yarn build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This will generate optimized static files in the `build/` folder, which can be deployed to any hosting service.
 
-### Making a Progressive Web App
+This command runs the test suite defined in the repository, ensuring all components and functionality work as expected.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🧩 Technologies Used
 
-### Advanced Configuration
+- **React**: JavaScript library for building user interfaces.
+- **CSS Modules**: For component-level styling.
+- **Amiibo API**: For fetching Amiibo-related data.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🤝 Contributing
 
-### Deployment
+If you'd like to contribute to this project, feel free to fork the repository and submit a pull request. All contributions, feedback, and suggestions are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🌐 Live Demo
 
-### `npm run build` fails to minify
+You can view the live version of this Amiibo app at: [https://amiibos.nomadev.online](https://your-demo-link.com)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📬 Contact
+
+- **Email**: [lucas.illiano@hotmail.com](mailto:lucas.illiano@hotmail.com)
+- **LinkedIn**: [https://www.linkedin.com/in/lucas-illiano/](https://www.linkedin.com/in/lucas-illiano/)
+- **GitHub**: [https://github.com/elviajero971/](https://github.com/elviajero971/)
+
+Feel free to reach out if you have any questions or want to collaborate on a project!

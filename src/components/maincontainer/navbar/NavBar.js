@@ -22,7 +22,6 @@ const NavBar = ({ config, clickCallback }) => {
                                         category,
                                         item,
                                         config[i].viewUrl + item)}
-                            hoverGesture={i <= 1}
                             text={config[i].name}
                             data={jsonData}
                         />

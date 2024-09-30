@@ -11,11 +11,10 @@ const DisplayContent = (props) => {
             try {
                 const dataCard = await fetch(props.url)
                 const jsonDataCard = await dataCard.json();
-                console.log('jsonDataCard: ', jsonDataCard);
                 tempArrayCard.push(
                     <Card data={jsonDataCard}/>
                 );
-    
+
             } catch (e){
                 tempArrayCard.push(
                     <Card data={false} text={"Error"}/>
@@ -23,14 +22,13 @@ const DisplayContent = (props) => {
             }
             setCardListItem(tempArrayCard);
         }
-        
+
         asyncFunction();
     }, [props.url]);
-    console.log('cardlistitem: ', cardListItem);
     return(
         <div className="display-content">
             <div className="display-content-header">
-                {props.category} / {props.type}
+                {props.category} / {props.item}
             </div>
             {cardListItem}
         </div>

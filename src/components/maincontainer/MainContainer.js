@@ -34,7 +34,6 @@ const MainContainer = () => {
         item: "YYYYYY",
         url: "ZZZZZZZ"
     });
-    console.log(clickData);
 
     return (
         <div className="main-container">
@@ -51,7 +50,7 @@ const MainContainer = () => {
             />
             <DisplayContent 
                 category={clickData.category}
-                type={clickData.type}
+                item={clickData.item}
                 url={clickData.url}
             />
         </div>

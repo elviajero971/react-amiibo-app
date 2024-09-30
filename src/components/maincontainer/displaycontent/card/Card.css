@@ -2,11 +2,14 @@
     display: flex;
     flex-wrap: wrap;
     padding: 10px;
+    max-height: calc(100vh - 100px);  /* Set a max height, adjusting for the navbar */
+    overflow-y: auto;
 }
 
 .card-item{
     margin: 10px;
-    border: solid black 2px;
+    border: solid #0733c5 2px;
+    border-radius: 10px;
     padding: 5px;
     width: 200px;
     display: flex;

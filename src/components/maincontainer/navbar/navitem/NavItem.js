@@ -10,20 +10,10 @@ const NavItem = (props) => {
     if(navBarClicked) navItemClassName += " clicked";
 
     const clickGesture = () => {
-        if(!props.hoverGesture) {
-            setNavBarClicked(!navBarClicked);
-        }
-    }
-
-    const hoverGesture = (value) => {
-        if (props.hoverGesture) {
-            setNavBarClicked(value);
-        }
+        setNavBarClicked(!navBarClicked);
     }
     return (
         <div
-            onMouseEnter={() => hoverGesture(true)} 
-            onMouseLeave={() => hoverGesture(false)}
             onClick={clickGesture}
             className= {navItemClassName}>
             <div className="navbar-item-text">

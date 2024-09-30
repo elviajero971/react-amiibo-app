@@ -1,25 +1,24 @@
 import './Card.css';
 
 const Card = (props) => {
-    let childArrayCard=[];
-    if (props.data){
-        console.log("props.data.amiibo.length: ",props.data.amiibo.length);
-
-        childArrayCard = props.data.amiibo.map((cardItem) =>{
-            return <div className="card-item">
-                        <h3>{cardItem.name}</h3>
-                        <img className="card-img" src={cardItem.image} alt={cardItem.name}/>
-                    </div>
-        })
+    let childArrayCard = [];
+    if (props.data) {
+        // Add a unique key prop to each card item
+        childArrayCard = props.data.amiibo.map((cardItem, index) => {
+            return (
+                <div key={index} className="card-item">  {/* Added key={index} */}
+                    <h3>{cardItem.name}</h3>
+                    <img className="card-img" src={cardItem.image} alt={cardItem.name} />
+                </div>
+            );
+        });
     }
 
-    console.log("tableau childArrayCardName: ", childArrayCard);
-    
-    return(
+    return (
         <div className="card-box">
             {childArrayCard}
         </div>
-    )
-}
+    );
+};
 
 export default Card;
